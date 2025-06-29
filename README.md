@@ -50,7 +50,7 @@ The Fictional Calendar plugin incorporates several mechanisms to ensure data int
 ## **Configuration (config.yml)**
 
 The config.yml file is the heart of your Fictional Calendar's customization.
-
+```
 \# Fictional Calendar Configuration  
 calendar:  
   \# The fictional start date used when the server starts for the first time.  
@@ -130,7 +130,7 @@ calendar:
     \- Sil  
     \- Varth  
     \- Theyim
-
+```
 ## **Commands**
 
 All commands start with /fictionalcalendar or the alias /fc.
