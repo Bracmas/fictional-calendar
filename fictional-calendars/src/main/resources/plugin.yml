@@ -1,0 +1,29 @@
+name: FictionalCalendar
+version: 1.0
+main: com.bracmas.fictional_calendars.FictionalCalendar
+api-version: 1.20
+
+commands:
+  fictionalcalendar:
+    description: Show help and info about the Fictional Calendar plugin
+    aliases: [fc]
+    usage: /fictionalcalendar [help|reload|setdate|date]
+    permission: fictionalcalendar.use
+    permission-message: You do not have permission to use this command.
+
+permissions:
+  fictionalcalendar.use:
+    description: Allows usage of the /fc command (base permission).
+    default: true
+
+  fictionalcalendar.date:
+    description: Allows use of the /fc date subcommand.
+    default: true
+
+  fictionalcalendar.setdate:
+    description: Allows use of the /fc setdate subcommand.
+    default: op
+
+  fictionalcalendar.reload:
+    description: Allows use of the /fc reload subcommand.
+    default: op

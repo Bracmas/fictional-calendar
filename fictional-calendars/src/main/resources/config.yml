@@ -1,0 +1,79 @@
+# Fictional Calendar Configuration
+calendar:
+  # The fictional start date used when the server starts for the first time.
+  # This date is used to initialize the calendar if 'day', 'month', or 'year' are not explicitly set below, or if 'lastUpdate' is 0.
+  # Format: "dd-mm-yyyy" (day-month-year).
+  start-date: "01-01-1000"
+
+  # The last real-world time (in milliseconds) when the calendar was updated by the plugin's internal tick.
+  # This value is crucial for calculating how many fictional days have passed since the last update.
+  # Do NOT modify this value manually unless you know exactly what you are doing, as it can cause date desynchronization.
+  # If you are manually setting the 'day', 'month', or 'year' below, it is recommended to set this to 0 or remove it,
+  # so the plugin recalculates the 'lastUpdate' on startup.
+  lastUpdate: 0
+
+  # The current fictional date settings. These values represent the plugin's active date.
+  # The plugin will automatically update these values based on the 'days-per-irl-day' setting.
+  day: 1        # Day of the current fictional month (must be 1 to the number of days specified in 'days-per-month' in plugin logic).
+  month: 1      # Month number (must be 1 to the total number of months defined in 'month-names' list below).
+  year: 1000    # Fictional year (must be a positive integer).
+
+  # Number of fictional days that pass for every one real-life day.
+  # For example, a value of 3.0 means 3 fictional days will pass for every 24 real-life hours.
+  # Fractional values are allowed (e.g., 0.5 for half a fictional day per real day).
+  # I strongly recommend to leave it as is if you are satisfied with the current progression speed.
+  days-per-irl-day: 3.0
+
+  # The primary format for displaying the date in chat commands (e.g., /fc date) and some PAPI placeholders.
+  # You can customize this string using placeholders:
+  #   - dd: Day (e.g., 01, 15, 30)
+  #   - mm: Month number (e.g., 01, 06, 12)
+  #   - MM: Month name (e.g., Love, Chaos, Evil)
+  #   - yyyy: Year (e.g., 1000, 1999, 2025)
+  #   - ww: Weekday name (e.g., Anth, Sil, Theyim)
+  # Examples:
+  #   "dd-mm-yyyy" -> 01-01-1000
+  #   "mm/dd/yyyy" -> 01/01/1000
+  #   "MM dd, yyyy" -> Love 01, 1000
+  #   "dd of MM, yyyy (ww)" -> 01 of Love, 1000 (Anth)
+  date-format: "dd-mm-yyyy"
+
+  # The default style for date output when using the /fc date command without specifying 'short' or 'long'.
+  #   - "short": Displays only the date according to 'date-format'.
+  #   - "long": Displays the date according to 'date-format' and appends the weekday name (if not already included with 'ww').
+  date-style: "short"
+
+  # Whether months should be displayed as their text names or as numbers.
+  # This affects how 'mm' and 'MM' are interpreted in 'date-format' and also influences PAPI output for month.
+  #   - "text": Displays month names from the 'month-names' list (e.g., Love, Chaos).
+  #   - "numeric": Displays month numbers (e.g., 1, 6, 12).
+  month-format: "text"
+
+  # List of month names used in your fictional calendar.
+  # The total number of months in your calendar is determined by the number of items in this list.
+  # Months are indexed starting from 1 (e.g., the first name in the list is Month 1, the second is Month 2, etc.).
+  month-names:
+    - Love
+    - Power
+    - Order
+    - Knowledge
+    - Oblivion
+    - Chaos
+    - Life
+    - War
+    - Righteousness
+    - Science
+    - Death
+    - Evil
+
+  # List of weekday names used in your fictional calendar.
+  # The total number of weekdays in your cycle is determined by the number of items in this list.
+  # The plugin calculates the current weekday by taking the total fictional days passed modulo the size of this list.
+  weekdays:
+    - Anth
+    - Asmo
+    - Roth
+    - Lull
+    - Sil
+    - Varth
+    - Theyim

@@ -1,0 +1,28 @@
+/target/
+# Compiled class files
+*.class
+
+# Jar files
+*.jar
+*.war
+*.ear
+
+# Maven build directories
+target/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+*.launch
+
+# Logs and temporary files
+*.log
+logs/
+temp/
+tmp/
+
+# Operating System files
+.DS_Store
+Thumbs.db
